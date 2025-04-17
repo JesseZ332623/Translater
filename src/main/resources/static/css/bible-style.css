@@ -1,0 +1,165 @@
+ /* 基础样式 */
+ body {
+    font-family: 'MedievalSharp', cursive, serif;
+    background-color: #f5e7d0;                      /* 羊皮纸底色 */
+    color: #3a3226;                                 /* 深褐色文字 */
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://www.transparenttextures.com/patterns/papyrus.png');
+    line-height: 1.6;
+}
+
+h2 {
+    text-align: center;
+    color: #5c3c21;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h2:before, h2:after {
+    content: "✝";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b7355;
+    font-size: 1.8rem;
+}
+
+h2:before {
+    left: 20%;
+}
+
+h2:after {
+    right: 20%;
+}
+
+/* 容器布局 */
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 终端框样式 - 仿古卷轴 */
+.terminal-box {
+    flex: 1;
+    min-width: 300px;
+    background: #f8f1e0;
+    border: 1px solid #d4c9b1;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+                inset 0 0 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 语言选择器 */
+.language-selector {
+    padding: 10px 15px;
+    background: #e6d8b5;
+    border-bottom: 1px solid #d4c9b1;
+}
+
+select {
+    font-family: 'MedievalSharp', cursive;
+    background: #f8f1e0;
+    border: 1px solid #b8a88a;
+    padding: 5px 10px;
+    color: #5c3c21;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* 文本区域 */
+.textarea-container {
+    padding: 15px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 520px;
+    border: 1px solid #d4c9b1;
+    background: #fffdf7;
+    padding: 10px;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 16px;
+    color: #3a3226;
+    resize: none;
+    line-height: 1.5;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #b8a88a;
+}
+
+/* 状态栏 */
+.status-bar {
+    padding: 8px 15px;
+    background: #e6d8b5;
+    border-top: 1px solid #d4c9b1;
+    font-size: 14px;
+    color: #5c3c21;
+    text-transform: uppercase;
+}
+
+/* 翻译按钮 */
+.translate-button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    background: #8b7355;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.translate-button:hover {
+    background: #6b5a42;
+    transform: translateY(-2px);
+}
+
+.translate-button:active {
+    transform: translateY(0);
+}
+
+.translate-button:disabled {
+    background: #b8a88a;
+    cursor: not-allowed;
+}
+
+/* 装饰元素 */
+.terminal-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to right, 
+        #8b7355 0%, #b8a88a 20%, #b8a88a 80%, #8b7355 100%);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    h2:before, h2:after {
+        display: none;
+    }
+}
